@@ -1,0 +1,24 @@
+{
+  // NOTE: This tsconfig.json acts as a base config for tsconfig inside /cypress folder
+  //  and also as a config for /src folder.
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "es6",
+    "lib": ["ES2021", "DOM"],
+    "strict": true,
+    "types": ["jest", "cypress", "node", "cypress-real-events", "cypress-wait-until"],
+    "baseUrl": "./",
+    "paths": {
+      "@cy/*": ["cypress/*"],
+      "@src/*": ["src/*"]
+    }
+  },
+  // NOTE: include cypress/support/index.ts for custom commands type declarations
+  // NOTE: "*.ts" is for explicit type checking of files located in the project root
+  "include": ["src/**/*.ts", "*.ts"],
+  // TODO: find out why "scripts" is excluded and add note comment
+  "exclude": ["scripts"]
+}

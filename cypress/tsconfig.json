@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    // NOTE: override types to avoid clashing with Jest types specified in root tsconfig,
+    //  which are used by *.test.ts files in /src.
+    //  It is possible that a better solution exists
+    "types": ["cypress", "cypress-real-events", "cypress-file-upload", "cypress-wait-until"]
+  },
+  "include": ["**/*.ts"]
+}
